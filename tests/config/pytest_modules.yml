@@ -1178,6 +1178,10 @@ fgbio/callmolecularconsensusreads:
   - modules/nf-core/fgbio/callmolecularconsensusreads/**
   - tests/modules/nf-core/fgbio/callmolecularconsensusreads/**
 
+fgbio/demofastqtobam:
+  - modules/nf-core/fgbio/demofastqtobam/**
+  - tests/modules/nf-core/fgbio/demofastqtobam/**
+
 fgbio/fastqtobam:
   - modules/nf-core/fgbio/fastqtobam/**
   - tests/modules/nf-core/fgbio/fastqtobam/**
@@ -1750,6 +1754,10 @@ gunc/run:
 gunzip:
   - modules/nf-core/gunzip/**
   - tests/modules/nf-core/gunzip/**
+
+gvc:
+  - modules/nf-core/gvc/**
+  - tests/modules/nf-core/gvc/**
 
 gvcftools/extractvariants:
   - modules/nf-core/gvcftools/extractvariants/**
