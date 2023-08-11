@@ -1,0 +1,117 @@
+name: "gvc"
+description: call variant including snp,indel,sv,cnv by gvc
+keywords:
+  - variant calling
+  - gvc
+  - genomics
+tools:
+  - "gvc":
+      description: "call variant including snp,indel,sv,cnv by gvc"
+      homepage: "https://git.genowisdom.cn/gvc/gvc"
+      documentation: "https://git.genowisdom.cn/gvc/gvc"
+      tool_dev_url: "https://git.genowisdom.cn/gvc/gvc"
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'test']`
+  
+  - input:
+      type: list
+      description: list of BAM files
+      pattern: "*.bam"
+  - input_index:
+      type: list
+      description: list of BAM file indexes
+      pattern: "*.bam.bai"
+  - meta2:
+      type: map
+      description: |
+        Groovy Map containing reference information
+        e.g. [ id:'genome' ]
+  - fasta:
+      type: file
+      description: The reference fasta file
+      pattern: "*.fasta"
+  - meta3:
+      type: map
+      description: |
+        Groovy Map containing reference information
+        e.g. [ id:'genome' ]
+  - fai:
+      type: file
+      description: Index of reference fasta file
+      pattern: "*.fasta.fai"
+  - bed:
+      type: file
+      description: bed file in gvc (optional)
+      pattern: "*.bed"
+  - region:
+      type: string
+      description: fregion parameters (optional)
+      pattern: "8:117859718-145743090"
+  - lregion:
+      type: string
+      description: region parameters (optional)
+      pattern: "8:117859718-145743090"
+  - dbsnp:
+      type: file
+      description: dbsnp file (optional)
+      pattern: ".{*vcf.gz/*vcf}"
+  - enable_sv:
+      type: boolean
+      description: Specify whether to run sv  (optional)
+      pattern: "true/false"
+  - enable_indel:
+      type: boolean
+      description: Specify whether to run indel (optional)
+      pattern: "true/false"
+  - enable_snv:
+      type: boolean
+      description: Specify whether to run snv (optional)
+      pattern: "true/false"
+  - enable_cnv:
+      type: boolean
+      description: Specify whether to run cnv (optional)
+      pattern: "true/false"
+    
+
+
+
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test']
+  - ghs:
+      type: file
+      description: cnv file
+      pattern: "*ghs"
+  - cov:
+      type: file
+      description: cnv file
+      pattern: "*cov"
+  - pup:
+      type: file
+      description: snv file
+      pattern: "*pup"
+  - idf:
+      type: file
+      description: indel file
+      pattern: "*idf"
+  - svf:
+      type: file
+      description: sv file
+      pattern: "*svf"
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+
+
+
+authors:
+  - "@zhypc"
