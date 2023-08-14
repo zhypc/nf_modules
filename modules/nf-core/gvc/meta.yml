@@ -55,7 +55,6 @@ input:
   - lregion:
       type: string
       description: region parameters (optional)
-      pattern: "8:117859718-145743090"
   - dbsnp:
       type: file
       description: dbsnp file (optional)

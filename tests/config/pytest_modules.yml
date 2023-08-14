@@ -3432,6 +3432,14 @@ simpleaf/quant:
   - modules/nf-core/simpleaf/quant/**
   - tests/modules/nf-core/simpleaf/quant/**
 
+singleprediction/umi2platform:
+  - modules/nf-core/singleprediction/umi2platform/**
+  - tests/modules/nf-core/singleprediction/umi2platform/**
+
+singleprediction/v1:
+  - modules/nf-core/singleprediction/v1/**
+  - tests/modules/nf-core/singleprediction/v1/**
+
 sistr:
   - modules/nf-core/sistr/**
   - tests/modules/nf-core/sistr/**
