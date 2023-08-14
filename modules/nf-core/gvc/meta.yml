@@ -51,7 +51,6 @@ input:
   - region:
       type: string
       description: fregion parameters (optional)
-      pattern: "8:117859718-145743090"
   - lregion:
       type: string
       description: region parameters (optional)
