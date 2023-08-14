@@ -1,10 +1,10 @@
-- name: "gvc"
+- name: gvc test_gvc
   command: nextflow run ./tests/modules/nf-core/gvc -entry test_gvc -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/gvc/nextflow.config
   tags:
-    - "gvc"
+    - gvc
   files:
-    - path: "output/gvc/test.bam"
-      md5sum: e667c7caad0bc4b7ac383fd023c654fc
-    - path: "output/gvc/versions.yml"
-      md5sum: a01fe51bc4c6a3a6226fbf77b2c7cf3b
-    
+    - path: output/gvc/test.idf
+      md5sum: 9a30d36b1f241b46abe20dc1555d9fea
+    - path: output/gvc/test.pup
+      md5sum: cfb2de8b6763b66c77f429479a59ddc2
+    - path: output/gvc/versions.yml

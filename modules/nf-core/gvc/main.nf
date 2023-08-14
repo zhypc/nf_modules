@@ -5,7 +5,8 @@ process GVC {
     conda "YOUR-TOOL-HERE"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/YOUR-TOOL-HERE':
-        'registry.genowis.com/library/gvc:v1.5.6' }"
+        'registry.genowis.com/library/gvc_bash:v1.5.6' }"
+    containerOptions '--network=host -v /home/igc/:/Genowis '
 
     input:
     tuple val(meta), path(input), path(input_index)
