@@ -1,0 +1,3 @@
+fgbio_demofastqtobam:
+  - modules/gvc/**
+  - tests/modules/gvc/**

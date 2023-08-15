@@ -1,0 +1,11 @@
+- name: singleprediction umi2platform test_singleprediction_umi2platform
+  command: nextflow run ./tests/modules/nf-core/singleprediction/umi2platform -entry test_singleprediction_umi2platform -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/singleprediction/umi2platform/nextflow.config
+  tags:
+    - singleprediction/umi2platform
+    - singleprediction
+  files:
+    - path: output/singleprediction/test.snv.vcf
+      md5sum: e1b5c38257c5e5ff3f41200c6423e399
+    - path: output/singleprediction/test.snv.vcf.bed.filter.vcf
+      md5sum: e4aba2c2fc52c906d927f58d60b9abd7
+    - path: output/singleprediction/versions.yml

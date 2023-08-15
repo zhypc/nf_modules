@@ -1,0 +1,81 @@
+name: "singleprediction_v1"
+description: change gvc result to vcf
+keywords:
+  - variant calling
+  - convert to vcf
+  - somatic
+tools:
+  - "singleprediction":
+      description: "change gvc result to vcf"
+      homepage: "https://git.genowisdom.cn/gvc/single_sample_feature2vcf"
+      documentation: "https://git.genowisdom.cn/gvc/single_sample_feature2vcf"
+      tool_dev_url: "https://git.genowisdom.cn/gvc/single_sample_feature2vcf"
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'test']`
+  - input:
+      type: file
+      description: gvc result
+      pattern: "*.{pup,idf,cov,ghs,svf}"
+  - meta2:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'test']`
+  - bam:
+      type: file
+      description: Sorted BAM/CRAM/SAM file
+      pattern: "*.{bam,cram,sam}"
+  - bam_index:
+      type: list
+      description: list of BAM file indexes
+      pattern: "*.bam.bai"
+  - meta3:
+      type: map
+      description: |
+        Groovy Map containing reference information
+        e.g. [ id:'genome' ]
+  - fasta:
+      type: file
+      description: The reference fasta file
+      pattern: "*.fasta"
+  - meta4:
+      type: map
+      description: |
+        Groovy Map containing reference information
+        e.g. [ id:'genome' ]
+  - fai:
+      type: file
+      description: Index of reference fasta file
+      pattern: "*.fasta.fai"
+  - bed:
+      type: file
+      description: bed file in gvc (optional)
+      pattern: "*.bed"
+  - typle:
+      type: string
+      description: variant type,including snv,indel,sv,cnv
+
+output:
+  #Only when we have meta
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test']
+  
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  - vcf:
+      type: file
+      description: gvc file converted to vcf file
+      pattern: "*.vcf"
+
+authors:
+  - "@zhypc"

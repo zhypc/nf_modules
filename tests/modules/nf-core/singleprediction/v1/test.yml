@@ -1,0 +1,11 @@
+- name: singleprediction v1 test_singleprediction_v1
+  command: nextflow run ./tests/modules/nf-core/singleprediction/v1 -entry test_singleprediction_v1 -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/singleprediction/v1/nextflow.config
+  tags:
+    - singleprediction
+    - singleprediction/v1
+  files:
+    - path: output/singleprediction/test.snv.vcf
+      md5sum: e1b5c38257c5e5ff3f41200c6423e399
+    - path: output/singleprediction/test.snv.vcf.bed.filter.vcf
+      md5sum: e4aba2c2fc52c906d927f58d60b9abd7
+    - path: output/singleprediction/versions.yml
